@@ -108,7 +108,7 @@ describe('Todos', () => {
       .put(`/todos/${v4()}`)
       .send({
         title: 'update title',
-        deadline: todoDate
+        deadline: todoDate.toISOString
       })
       .set('username', userResponse.body.username)
       .expect(404);
